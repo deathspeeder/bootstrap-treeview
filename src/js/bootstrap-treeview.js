@@ -601,7 +601,8 @@
 				$.each(node.tags, function addTag(id, tag) {
 					treeItem
 						.append($(_this.template.badge)
-							.append(tag)
+							.addClass(tag.badge)
+							.append(tag.text)
 						);
 				});
 			}
