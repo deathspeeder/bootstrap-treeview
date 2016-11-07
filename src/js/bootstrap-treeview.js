@@ -625,6 +625,7 @@
 
 		var color = node.color;
 		var backColor = node.backColor;
+		var backImage = node.backImage;
 
 		if (this.options.highlightSelected && node.state.selected) {
 			if (this.options.selectedColor) {
@@ -644,8 +645,13 @@
 			}
 		}
 
-		return 'color:' + color +
-			';background-color:' + backColor + ';';
+		if (backColor === undefined) {
+			return 'color:' + color +
+				';background-image:' + backImage + ';';
+		} else {
+			return 'color:' + color +
+				';background-color:' + backColor + ';';
+		}
 	};
 
 	// Add inline style into head
@@ -1247,3 +1253,4 @@
 	};
 
 })(jQuery, window, document);
+
